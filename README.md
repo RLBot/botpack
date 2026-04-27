@@ -16,7 +16,7 @@ Requirements:
 	- A logo file, and
     - All fields in the details section (description, fun fact, source link, developer, language, tags).
 - **bob.toml**: A properly configured `bob.toml` file which allows our tool [bob](https://github.com/swz-git/bob) to build and package the submission. See the bob repository for further instructions and examples.
-- **Skill Limit**: Your bot must be grand champion rank or lower (equal to Nexto or lower) due to the risk of cheaters taking advantage of your bot.
+- **Skill Limit**: Your bot must be grand champion rank or lower (equal to Nexto or lower) due to the risk of cheaters taking advantage of your bot. Guideline: If your bot gets 42 goals before Nexto gets 28 in any soccar mode (1s, 2s, 3s), then it is too good.
 - **License (optional)**: Add a [LICENSE](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository) file for your bot. The license must allow this bot pack to use the code and distribute the submission. If you do not include a LICENSE, the bot pack defaults to the [MIT license](https://license.md/licenses/mit-license/).
 
 After checking the requirements above, make a pull request to this repository that adds your bot as a submodule using `git submodule add <yourgitrepo.git>`.

@@ -22,3 +22,6 @@
 [submodule "Botpack/TensorBot-v5"]
 	path = Botpack/TensorBot-v5
 	url = https://github.com/HappyBavarian07/TensorBot-v5.git
+[submodule "Botpack/boost-balance"]
+	path = Botpack/boost-balance
+	url = https://github.com/MatofSteel1/boost-balance.git

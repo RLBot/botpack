@@ -22,3 +22,6 @@
 [submodule "Botpack/TensorBot-v5"]
 	path = Botpack/TensorBot-v5
 	url = https://github.com/HappyBavarian07/TensorBot-v5.git
+[submodule "Botpack/RLBot-Wisp-v2-py"]
+	path = Botpack/RLBot-Wisp-v2-py
+	url = https://github.com/NicEastvillage/RLBot-Wisp-v2-py.git

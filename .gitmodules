@@ -28,3 +28,6 @@
 [submodule "Botpack/NoobBlack"]
 	path = Botpack/NoobBlack
 	url = https://github.com/NicEastvillage/Noob-Black-425.git
+[submodule "Botpack/PartyCannon"]
+	path = Botpack/PartyCannon
+	url = https://github.com/NicEastvillage/PartyCannon.git

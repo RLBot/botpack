@@ -25,3 +25,6 @@
 [submodule "Botpack/RLBot-Wisp-v2-py"]
 	path = Botpack/RLBot-Wisp-v2-py
 	url = https://github.com/NicEastvillage/RLBot-Wisp-v2-py.git
+[submodule "Botpack/PartyCannon"]
+	path = Botpack/PartyCannon
+	url = https://github.com/NicEastvillage/PartyCannon.git

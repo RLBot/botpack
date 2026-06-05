@@ -31,6 +31,6 @@
 [submodule "Botpack/PartyCannon"]
 	path = Botpack/PartyCannon
 	url = https://github.com/NicEastvillage/PartyCannon.git
-[submodule "bots/bowie-knife-99"]
-	path = bots/bowie-knife-99
+[submodule "Botpack/bowie-knife-99"]
+	path = Botpack/bowie-knife-99
 	url = https://github.com/Martico2432/bowie-knife-99.git

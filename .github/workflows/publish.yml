@@ -110,7 +110,7 @@ jobs:
           ./bob diff bob_build_old_x86_64-linux bob_build_x86_64-linux > patch_x86_64-linux.bobdiff
 
       - name: Publish to GitHub Releases
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ steps.get_tag.outputs.new_tag }}
           files: |

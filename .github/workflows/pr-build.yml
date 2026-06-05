@@ -23,9 +23,23 @@ jobs:
       - run: chmod +x bob
 
       - uses: robinraju/release-downloader@v1
+        id: download_packs
+        continue-on-error: true
+        with:
+          latest: true
+          fileName: '*.tar.xz'
+
+      - uses: robinraju/release-downloader@v1
         with:
           latest: true
           fileName: "buildinfo.toml"
+
+      - name: Extract archives
+        if: ${{ steps.download_packs.outcome == 'success' }}
+        run: |
+          mkdir -p bob_build
+          for file in *.tar.xz; do tar --transform 's|^[^/]*|bob_build|' -xf "$file"; done
+          mv buildinfo.toml bob_build/
 
       - name: Extract archives
         run: |

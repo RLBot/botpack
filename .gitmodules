@@ -34,3 +34,6 @@
 [submodule "Botpack/bowie-knife-99"]
 	path = Botpack/bowie-knife-99
 	url = https://github.com/Martico2432/bowie-knife-99.git
+[submodule "Botpack/RLDojo"]
+	path = Botpack/RLDojo
+	url = https://github.com/ecolsen7/RLDojo.git

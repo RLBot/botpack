@@ -30,6 +30,7 @@ jobs:
           fileName: '*.tar.xz'
 
       - uses: robinraju/release-downloader@v1
+        continue-on-error: true
         with:
           latest: true
           fileName: "buildinfo.toml"
@@ -39,11 +40,6 @@ jobs:
         run: |
           mkdir -p bob_build
           for file in *.tar.xz; do tar --transform 's|^[^/]*|bob_build|' -xf "$file"; done
-          mv buildinfo.toml bob_build/
-
-      - name: Extract archives
-        run: |
-          mkdir -p bob_build
           mv buildinfo.toml bob_build/
 
       - name: Build

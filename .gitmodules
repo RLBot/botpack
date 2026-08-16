@@ -37,3 +37,6 @@
 [submodule "Botpack/RLDojo"]
 	path = Botpack/RLDojo
 	url = https://github.com/ecolsen7/RLDojo.git
+[submodule "Botpack/Swishy"]
+	path = Botpack/Swishy
+	url = https://github.com/bccessnadev/RLBot-Swishy.git

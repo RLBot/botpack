@@ -37,3 +37,6 @@
 [submodule "Botpack/RLDojo"]
 	path = Botpack/RLDojo
 	url = https://github.com/ecolsen7/RLDojo.git
+[submodule "Botpack/RLBot-Willo-24k"]
+	path = Botpack/RLBot-Willo-24k
+	url = https://github.com/NicEastvillage/RLBot-Willo-24k.git

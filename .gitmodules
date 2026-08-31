@@ -40,3 +40,6 @@
 [submodule "Botpack/Swishy"]
 	path = Botpack/Swishy
 	url = https://github.com/bccessnadev/RLBot-Swishy.git
+[submodule "Botpack/RLBot-Willo-24k"]
+	path = Botpack/RLBot-Willo-24k
+	url = https://github.com/NicEastvillage/RLBot-Willo-24k.git

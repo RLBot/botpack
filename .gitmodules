@@ -43,3 +43,6 @@
 [submodule "Botpack/RLBot-Willo-24k"]
 	path = Botpack/RLBot-Willo-24k
 	url = https://github.com/NicEastvillage/RLBot-Willo-24k.git
+[submodule "Botpack/Kiri"]
+	path = Botpack/Kiri
+	url = https://github.com/YuutaCodes/Kiri-rlbot.git

@@ -46,3 +46,24 @@
 [submodule "Botpack/ChadGPT"]
 	path = Botpack/ChadGPT
 	url = https://github.com/thecosmicskye/ChadGPT.git
+[submodule "Botpack/Chronos"]
+	path = Botpack/Chronos
+	url = https://github.com/KingJake3113/Chronos.git
+[submodule "Botpack/Ripple-RLBot"]
+	path = Botpack/Ripple-RLBot
+	url = https://github.com/Rolv-Arild/Ripple-RLBot.git
+[submodule "Botpack/Kira"]
+	path = Botpack/Kira
+	url = https://github.com/stepkrav06/Kira.git
+[submodule "Botpack/GalactusV2"]
+	path = Botpack/GalactusV2
+	url = https://github.com/SoldierDoge/GalactusV2.git
+[submodule "Botpack/FuryBotpack"]
+	path = Botpack/FuryBotpack
+	url = https://github.com/HappyBavarian07/FuryBotpack.git
+[submodule "Botpack/Dice-BotPackV5"]
+	path = Botpack/Dice-BotPackV5
+	url = https://github.com/V1XT1/Dice-BotPackV5.git
+[submodule "Botpack/RLBot-Ducky"]
+	path = Botpack/RLBot-Ducky
+	url = https://github.com/bccessnadev/RLBot-Ducky.git

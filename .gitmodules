@@ -67,3 +67,6 @@
 [submodule "Botpack/RLBot-Ducky"]
 	path = Botpack/RLBot-Ducky
 	url = https://github.com/bccessnadev/RLBot-Ducky.git
+[submodule "Botpack/RainStream"]
+	path = Botpack/RainStream
+	url = https://github.com/Reiud-Ad/RainStream.git

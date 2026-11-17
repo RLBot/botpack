@@ -67,6 +67,7 @@ Check the `[details]` table. The README requires every field:
 
 - [ ] `description`, `fun_fact`, `source_link`, `developer`, `language`. `tags` is required for bots and optional for scripts.
 - [ ] When present, `tags` uses known values. The GUI defines the list in `frontend/src/pages/RocketHost.svelte` of `RLBot/gui`: `1v1`, `2v2`, `3v3`, `teamplay`, `goalie`, `hoops`, `dropshot`, `snow-day`, `rumble`, `spike-rush`, `heatseeker`, `memebot`. `soccar` is a game mode, not a tag. Reject `ML`, `teamwork`, `3v2`, `2v1` and other invented tags.
+- [ ] `teamplay` means the bot handles a random number of teammates or matches larger than 3v3. Do not use it for a bot that only plays in a fixed 1v1, 2v2, or 3v3 lineup.
 
 ### `bob.toml`
 

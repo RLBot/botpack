@@ -7,7 +7,9 @@ This file has two jobs.
 
 Read [README.md](README.md) first. It holds the policy: open source, a valid `bot.toml` or `script.toml`, a working `bob.toml`, a skill limit, and a permissive license. This file holds the mechanics that the README leaves out.
 
-The recurring source of failed submissions is `bob.toml` and the build setup. Bob is small enough that people assume it works like other build tools. It does not. An AI-generated `bob.toml` has never passed review here (PR #14). Every config in this repository follows one of the templates below.
+The recurring source of failed submissions is `bob.toml` and the build setup. Bob is small enough that people assume it works like other build tools. It does not. PR #14 failed because the config skipped the examples and used invented keys.
+
+AI assistance is fine. The config still has to follow a template, compile with `bob build bob.toml`, and play a match in RLBot. Every config in this repository follows one of the templates below.
 
 ---
 
@@ -96,13 +98,13 @@ entry_file = "bot.spec"
 
 ## Choose a builder
 
-| Language            | Builder       | Template to copy                                                    |
-| ------------------- | ------------- | ------------------------------------------------------------------- |
-| Python, no ML       | `pyinstaller` | https://github.com/RLBot/python-example                             |
-| Python with PyTorch | `pyinstaller` | https://github.com/VirxEC/Elementv5                                 |
-| C++ / GigaLearn     | `custom`      | https://github.com/SubparN0va/GGLBot/tree/bob                       |
-| Rust                | `rust`        | https://github.com/swz-git/bob-example/tree/master/rust_example     |
-| C#                  | `csharp`      | https://github.com/VirxEC/csharp-example                            |
+| Language            | Builder       | Template to copy                                                |
+| ------------------- | ------------- | --------------------------------------------------------------- |
+| Python, no ML       | `pyinstaller` | https://github.com/RLBot/python-example                         |
+| Python with PyTorch | `pyinstaller` | https://github.com/VirxEC/Elementv5                             |
+| C++ / GigaLearn     | `custom`      | https://github.com/SubparN0va/GGLBot/tree/bob                   |
+| Rust                | `rust`        | https://github.com/swz-git/bob-example/tree/master/rust_example |
+| C#                  | `csharp`      | https://github.com/VirxEC/csharp-example                        |
 
 Use a template rather than writing a config from scratch. For `custom`, the Dockerfile must compile the bot from source and emit a tar to stdout containing at least one `x86*windows*` folder and one `x86*linux*` folder. Bob's Dockerfile contract is documented at https://github.com/RLBot/bob/blob/master/bob-cli/dockerfiles/_README.md.
 
@@ -235,7 +237,7 @@ These are the failures seen in this repository's PR history. Each one has cost a
 
 | Symptom                                                          | Cause                                                                 | Fix                                                     |
 | ---------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------- |
-| Bob build fails with an unrecognised config shape                | AI-generated or invented `bob.toml` keys (PR #14)                     | Copy the matching template from bob-example             |
+| Bob build fails with an unrecognised config shape                | Invented `bob.toml` keys that skip the examples (PR #14)              | Copy the matching template from bob-example             |
 | `Fetched in submodule path ... did not contain <sha>`            | Submodule references an unpushed commit (PR #13)                      | Push the commit, then update the pointer in this repo   |
 | Docker error about Windows containers                            | `FROM mcr.microsoft.com/windows/...` (PR #13)                         | Use a Linux base image and cross-compile                |
 | `ModuleNotFoundError: No module named 'torch'` in the packed bot | Plain `import torch`, or wrong relative archive path (PR #39)         | Use the try/except snippet with `../../torch-archive`   |

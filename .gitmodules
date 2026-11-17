@@ -76,3 +76,6 @@
 [submodule "Botpack/QuestionMark"]
 	path = Botpack/QuestionMark
 	url = https://github.com/thecosmicskye/QuestionMark.git
+[submodule "Botpack/Seer-RLBotV5"]
+	path = Botpack/Seer-RLBotV5
+	url = https://github.com/Walon1998/Seer-RLBotV5

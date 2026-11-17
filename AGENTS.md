@@ -33,6 +33,7 @@ Three consequences matter for review.
 
 - Bob picks a Linux binary by MIME type and file name. If the archive contains both a launcher and a Torch-linked core, the **last matching ELF in tar order** becomes `run_command_linux`. Use `tar --sort=name` so `000-runtime/GGLBotCore` sorts before `GGLBot`.
 - Bob overwrites `run_command`. The value in the source `bot.toml` only has to be valid for local development. It is not what ships.
+- Bob skips the logo and loadout copy when the path does not resolve from the config's directory. A custom Dockerfile can stage those files at the project root itself, so a non-relative path is not always a missing asset. Check the Dockerfile before flagging it.
 - `bob split` copies only files at the project root and files under platform folders. Anything nested elsewhere in the project is dropped. Models, DLLs, scripts, and data must be inside the platform folder or copied there by the Dockerfile.
 
 Bob hashes the project directory and skips rebuilds when the hash matches `buildinfo.toml`. That is why PR CI can build only changed bots. It is also why a submodule pointer must be updated after a fix: the root repository pins one commit, and nothing else sees the newer code.
@@ -48,7 +49,7 @@ Bob's source is at https://github.com/RLBot/bob. The builder examples are at htt
 - [ ] Public repository. All source and all models are available. Prebuilt binaries are not accepted; bob builds from source.
 - [ ] License that permits redistribution. MIT is the default when the repo has none.
 - [ ] A `bob.toml` at the repository root. The file name is exact.
-- [ ] A `bot.toml` or `script.toml` with `#:schema https://rlbot.org/schemas/agent.json`.
+- [ ] A `bot.toml` or `script.toml`. The `#:schema https://rlbot.org/schemas/agent.json` header is optional.
 - [ ] Everything the bot needs at runtime is in the repository. No private files, no machine-local paths, no network downloads at bot startup.
 
 ### `bot.toml` / `script.toml`
@@ -57,15 +58,15 @@ Check the `[settings]` table:
 
 - [ ] `agent_id` is unique and follows `author/bot-name/version` or `author/bot-name`.
 - [ ] `name` is set.
-- [ ] `run_command` is set. Add `run_command_linux` if the command differs on Linux.
+- [ ] `run_command` and `run_command_linux` are optional in the source config. Bob overwrites both with the built binary paths; the values only matter when running the bot straight from the repository.
 - [ ] `logo_file` is either a real path or omitted. An empty `logo_file = ""` breaks bob: it resolves to the config's parent directory and `fs::copy` fails (PR #6). Bob falls back to `logo.png` when the key is absent.
 - [ ] `loadout_file`, when present, points to a file that exists.
 - [ ] `hivemind` is set deliberately. `true` means one process controls all cars with that agent id.
 
 Check the `[details]` table. The README requires every field:
 
-- [ ] `description`, `fun_fact`, `source_link`, `developer`, `language`, `tags`.
-- [ ] `tags` uses known values. The GUI defines the list in `frontend/src/pages/RocketHost.svelte` of `RLBot/gui`: `1v1`, `2v2`, `3v3`, `teamplay`, `goalie`, `hoops`, `dropshot`, `snow-day`, `rumble`, `spike-rush`, `heatseeker`, `memebot`. `soccar` is a game mode, not a tag. Reject `ML`, `teamwork`, `3v2`, `2v1` and other invented tags.
+- [ ] `description`, `fun_fact`, `source_link`, `developer`, `language`. `tags` is required for bots and optional for scripts.
+- [ ] When present, `tags` uses known values. The GUI defines the list in `frontend/src/pages/RocketHost.svelte` of `RLBot/gui`: `1v1`, `2v2`, `3v3`, `teamplay`, `goalie`, `hoops`, `dropshot`, `snow-day`, `rumble`, `spike-rush`, `heatseeker`, `memebot`. `soccar` is a game mode, not a tag. Reject `ML`, `teamwork`, `3v2`, `2v1` and other invented tags.
 
 ### `bob.toml`
 

@@ -79,3 +79,6 @@
 [submodule "Botpack/Seer-RLBotV5"]
 	path = Botpack/Seer-RLBotV5
 	url = https://github.com/Walon1998/Seer-RLBotV5
+[submodule "Botpack/CaYaHeatSeekerBot"]
+	path = Botpack/CaYaHeatSeekerBot
+	url = https://github.com/CaYatur/CaYaHeatSeekerBot.git
